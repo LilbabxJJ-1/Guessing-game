@@ -3,7 +3,6 @@ import random
 #variables
 print("You have to guess a number between 1 and 15! Each turn, you'll get a hint to go higher or lower. You have 10 chances")
 number = random.randint(1,15)
-print(number)
 nums = []
 nums.append(number)
 turnsl = 10
@@ -38,7 +37,7 @@ while True:
      print(guesses.read())
     guesses.close()
     print(f"Correct Number: {number}")
-    
+
     with open("guesses.txt", "w") as guesses:
       guesses.write("")
     guesses.close()
