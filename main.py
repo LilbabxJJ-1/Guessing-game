@@ -1,11 +1,11 @@
 import random
 
 #variables
-print("You have to guess a number between 1 and 15! Each turn, you'll get a hint to go higher or lower. You have 10 chances")
+print("You have to guess a number between 1 and 15! Each turn, you'll get a hint to go higher or lower. You have 6 chances")
 number = random.randint(1,15)
 nums = []
 nums.append(number)
-turnsl = 10
+turnsl = 6
 turnst = 0
 
 
