@@ -1,7 +1,8 @@
 import random
+from termcolor import colored
 
 #variables
-print("You have to guess a number between 1 and 15! Each turn, you'll get a hint to go higher or lower. You have 6 chances")
+print(colored("You have to guess a number between 1 and 15! Each turn, you'll get a hint to go higher or lower. You have 6 chances","cyan"))
 number = random.randint(1,15)
 nums = []
 nums.append(number)
@@ -16,7 +17,7 @@ while True:
   if guess_number not in nums and turnsl != 1:
    turnsl -= 1
    turnst += 1
-   print(f"That is incorrect! {turnsl} more tries!")
+   print(colored(f"That is incorrect! {turnsl} more tries!","red"))
    with open("guesses.txt", "a") as guesses:
      guesses.write(f"Try {turnst}: {guess_number} \n")
    guesses.close
@@ -30,7 +31,7 @@ while True:
   elif turnsl == 1 and number != guess_number:
     
   
-    print(f"\nYou failed!")
+    print(colored(f"\nYou failed!", "red"))
     print("Summary")
 
     with open("guesses.txt", "r") as guesses:
@@ -45,7 +46,7 @@ while True:
   
   #error and correct
   else:
-   print(f"You are correct! You guessed after {turnst} tries.")
+   print(colored(f"You are correct! You guessed after {turnst} tries.", "green"))
    print("Summary")
 
    with open("guesses.txt", "r") as guesses:
