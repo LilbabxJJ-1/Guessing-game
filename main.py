@@ -46,6 +46,16 @@ while True:
   #error and correct
   else:
    print(f"You are correct! You guessed after {turnst} tries.")
+   print("Summary")
+
+   with open("guesses.txt", "r") as guesses:
+     print(guesses.read())
+   guesses.close()
+   print(f"Correct Number: {number}")
+
+   with open("guesses.txt", "w") as guesses:
+      guesses.write("")
+   guesses.close()
    break
  except ValueError:
     print("That's not a number!")
