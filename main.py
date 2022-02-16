@@ -15,17 +15,17 @@ while True:
  try:
   guess_number = int(input("\nWhat's your guess? "))
   if guess_number not in nums and turnsl != 1:
-   turnsl -= 1
-   turnst += 1
-   print(colored(f"That is incorrect! {turnsl} more tries!","red"))
-   with open("guesses.txt", "a") as guesses:
+    turnsl -= 1
+    turnst += 1
+    print(colored(f"That is incorrect! {turnsl} more tries!","red"))
+    with open("guesses.txt", "a") as guesses:
      guesses.write(f"Try {turnst}: {guess_number} \n")
-   guesses.close
+    guesses.close
 
-   if guess_number < number:
-     print("Aim Higher!")
-   else:
-     print("Aim Lower!")  
+    if guess_number < number:
+        print("Aim Higher!")
+    else:
+        print("Aim Lower!")  
   
 
   elif turnsl == 1 and number != guess_number:
